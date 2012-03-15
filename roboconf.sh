@@ -27,3 +27,8 @@ function roboconf-bundler {
 function roboconf-rails-activerecord {
   bundle exec rake db:migrate
 }
+
+function roboconf-passenger {
+  mkdir -p tmp
+  touch tmp/restart.txt
+}
