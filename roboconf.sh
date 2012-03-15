@@ -28,6 +28,8 @@ function roboconf-bundler {
 }
 
 function roboconf-npm {
+  roboconf-check node
+  roboconf-check npm
   npm install
 }
 
