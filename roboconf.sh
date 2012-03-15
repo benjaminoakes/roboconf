@@ -17,11 +17,14 @@ function roboconf-git-modules {
 }
 
 function roboconf-bundler {
+  bundler_version="$1"
+  opts="$2"
+
   roboconf-check rvm
   roboconf-check gem
   # Assumes rvm
-  gem install bundler --version "$1" --no-rdoc --no-ri
-  bundle install
+  gem install bundler --version "$bundler_version" --no-rdoc --no-ri
+  bundle install $opts
 }
 
 function roboconf-rails-activerecord {
