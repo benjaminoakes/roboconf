@@ -28,7 +28,16 @@ function roboconf-bundler {
 }
 
 function roboconf-rails-activerecord {
+  bundle exec rake db:create
   bundle exec rake db:migrate
+}
+
+function roboconf-padrino-activerecord {
+  bundle exec padrino rake ar:create
+  bundle exec padrino rake ar:create -e test
+  bundle exec padrino rake ar:migrate
+  bundle exec padrino rake ar:migrate -e test
+  bundle exec padrino rake seed
 }
 
 function roboconf-passenger {
