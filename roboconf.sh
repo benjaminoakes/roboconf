@@ -15,8 +15,8 @@ function roboconf-git-modules {
 }
 
 function roboconf-bundler {
-  bundler_version="$1"
-  opts="$2"
+  local bundler_version="$1"
+  local opts="$2"
 
   roboconf-check rvm
   roboconf-check gem
