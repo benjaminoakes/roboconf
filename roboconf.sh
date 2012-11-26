@@ -2,6 +2,8 @@ function roboconf-check {
   local dependency="$1"
 
   echo -n "checking for $dependency... "
+
+  # See also: [Check if a program exists from a bash script](http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script)
   hash "$dependency" 2>&- || {
     echo 'no'
     exit -1
