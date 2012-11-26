@@ -1,6 +1,8 @@
 function roboconf-check {
-  echo -n "checking for $1... "
-  hash "$1" 2>&- || {
+  local dependency="$1"
+
+  echo -n "checking for $dependency... "
+  hash "$dependency" 2>&- || {
     echo 'no'
     exit -1
   }
@@ -15,8 +17,8 @@ function roboconf-git-modules {
 }
 
 function roboconf-bundler {
-  bundler_version="$1"
-  opts="$2"
+  local bundler_version="$1"
+  local opts="$2"
 
   roboconf-check rvm
   roboconf-check gem
